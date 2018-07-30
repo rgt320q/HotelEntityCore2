@@ -1,8 +1,57 @@
 ﻿
-@model HotelEntityCore2.Models.Rezervation
+@model List<Rezervation>
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+@{
+    Layout = null;
+}
 
+<h2>Index</h2>
+<br />
+
+<a asp-action="Apply">Apply The Course!</a>
+<br />
+
+<br />
+
+<div class="">
+    @foreach (var item in Model)
+    {
+    <div>
+        Rezervasyon No:@item.Id
+        Oda Numarası: @item.RoomNo
+        <div>
+            <div>
+                @item.Arrivaldate
+                @item.DepartureDate
+                <div>
+                    Toplam <b>@item.TatolDays</b> Gün,
+
+                </div>
+
+            </div>
+
+            @foreach (var guests in item.Guests)
+            {
+                <div>
+                    @guests.Name
+                    @guests.SurName
+                </div>
+
+            }
+            @foreach (var p in item.Payments)
+            {
+                <div>
+                    @p.TotalPrice.ToString("C")
+                </div>
+
+            }
+        </div>
+        <br />
+
+    </div>
+
+    }
+</div>

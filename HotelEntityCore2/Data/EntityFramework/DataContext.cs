@@ -10,9 +10,10 @@ namespace HotelEntityCore2.Data.EntityFramework
     public class DataContext:DbContext
     {
         public DataContext(DbContextOptions<DataContext> options)
-            :base (options)
+            : base(options)
         {
         }
+
 
         public DbSet<Rezervation> Rezervations { get; set; }
         public DbSet<Guest> Guests { get; set; }

@@ -58,7 +58,7 @@ namespace HotelEntityCore2
             //wwwroot
             app.UseStaticFiles();
 
-            //app.UseStaticFiles();
+            app.UseStaticFiles();
 
             app.UseStaticFiles(new StaticFileOptions()
             {
